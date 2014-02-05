@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MemberViewController.h
 //  Farty
 //
 //  Created by kozyty on 2014/02/05.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface MemberViewController : UIViewController
 
 @end

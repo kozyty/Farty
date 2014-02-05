@@ -13,9 +13,25 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [self fadeSplashScreen];
     return YES;
 }
-							
+
+- (void)fadeSplashScreen {
+    UIImage *splash = [UIImage imageNamed:@"LaunchImage-640x1136@2x"];
+    NSLog(@"%@", splash);
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0.0, 640, 1136)];
+    imageView.image = splash;
+    [self.window addSubview:imageView];
+    
+    self.window.alpha = 1.0f;
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.9f];
+    imageView.alpha = 0.0f;
+    [UIView commitAnimations];
+    
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
